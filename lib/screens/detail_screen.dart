@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mini_covid19_menus/constant.dart';
+import 'package:mini_covid19_menus/widgets/weekly_chart.dart';
 
 class DetailScreens extends StatelessWidget {
   const DetailScreens({super.key});
@@ -31,6 +32,7 @@ class DetailScreens extends StatelessWidget {
               ),
               // item
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // top
                   buildTitlenIconMore(),
@@ -39,6 +41,22 @@ class DetailScreens extends StatelessWidget {
                     height: 15,
                   ),
                   buildCaseNumber(context),
+                  // bottom
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Text(
+                    "From Health Center",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w200,
+                      color: kTextMediumColor,
+                      fontSize: 16,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  WeeklyChart(),
                 ],
               ),
             ),
