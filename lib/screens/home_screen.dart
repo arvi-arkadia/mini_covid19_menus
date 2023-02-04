@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mini_covid19_menus/constant.dart';
+import 'package:mini_covid19_menus/screens/detail_screen.dart';
 import 'package:mini_covid19_menus/widgets/info_card.dart';
 import 'package:mini_covid19_menus/widgets/line_chart.dart';
 
@@ -41,21 +42,30 @@ class HomeScreen extends StatelessWidget {
                     effectedNum: 1062,
                     title: 'Confirmed Case',
                     iconColor: Color(0xffff8c00),
+                    press: () {},
                   ),
                   InfoCard(
                     effectedNum: 75,
                     title: 'Total Deaths',
                     iconColor: Color(0xffff2d55),
+                    press: () {},
                   ),
                   InfoCard(
                     effectedNum: 689,
                     title: 'Total Recovered',
                     iconColor: Color(0xff50e3c2),
+                    press: () {},
                   ),
                   InfoCard(
                     effectedNum: 75,
                     title: 'New Cases',
                     iconColor: Color(0xff5856d6),
+                    press: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return DetailScreens();
+                      }));
+                    },
                   ),
                 ],
               ),
