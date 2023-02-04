@@ -13,70 +13,106 @@ class DetailScreens extends StatelessWidget {
       appBar: buildDetailBar(context),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          children: [
-            // item top
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
-              // bg color
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(0, 21),
-                    blurRadius: 53,
-                    color: Colors.black.withOpacity(.05),
-                  ),
-                ],
-              ),
-              // item
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // top
-                  buildTitlenIconMore(),
-                  // middle
-                  SizedBox(
-                    height: 15,
-                  ),
-                  buildCaseNumber(context),
-                  // bottom
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Text(
-                    "From Health Center",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w200,
-                      color: kTextMediumColor,
-                      fontSize: 16,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              // item top
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+                // bg color
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(0, 21),
+                      blurRadius: 53,
+                      color: Colors.black.withOpacity(.05),
                     ),
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  WeeklyChart(),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      buildInfoTextWithPercentage(
-                        percentage: '6.43',
-                        title: 'From Last Week',
+                  ],
+                ),
+                // item
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // top
+                    buildTitlenIconMore(),
+                    // middle
+                    SizedBox(
+                      height: 15,
+                    ),
+                    buildCaseNumber(context),
+                    // bottom
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Text(
+                      "From Health Center",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w200,
+                        color: kTextMediumColor,
+                        fontSize: 16,
                       ),
-                      buildInfoTextWithPercentage(
-                        percentage: '9.43',
-                        title: 'Recovery Rate',
-                      ),
-                    ],
-                  )
-                ],
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    WeeklyChart(),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        buildInfoTextWithPercentage(
+                          percentage: '6.43',
+                          title: 'From Last Week',
+                        ),
+                        buildInfoTextWithPercentage(
+                          percentage: '9.43',
+                          title: 'Recovery Rate',
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+              SizedBox(height: 20),
+              Container(
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(0, 21),
+                      blurRadius: 54,
+                      color: Colors.black.withOpacity(.05),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Global Map",
+                          style: TextStyle(fontSize: 15),
+                        ),
+                        SvgPicture.asset("assets/icons/more.svg")
+                      ],
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    SvgPicture.asset("assets/icons/map.svg"),
+                  ],
+                ),
+              ),
+              SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     );
